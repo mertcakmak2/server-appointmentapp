@@ -5,9 +5,9 @@ services:
     restart: always
     container_name: mysqldb
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: appuser
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: appuser
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
@@ -19,9 +19,9 @@ services:
     container_name: pma
     environment:
       PMA_HOST: mysql-server
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: appuser
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: appuser
     ports:
       - "8082:80"
 volumes:
