@@ -5,9 +5,7 @@ services:
     restart: always
     container_name: mysqldb
     environment:
-      MYSQL_ROOT_PASSWORD: appuser
-      MYSQL_USER: appuser
-      MYSQL_PASSWORD: appuser
+      MYSQL_ROOT_PASSWORD: Trabzonspor.61
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
