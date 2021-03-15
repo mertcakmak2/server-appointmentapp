@@ -5,7 +5,9 @@ services:
     restart: always
     container_name: mysqldb
     environment:
-      MYSQL_PASSWORD: Trabzonspor.61
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
@@ -17,8 +19,9 @@ services:
     container_name: pma
     environment:
       PMA_HOST: mysql-server
-      PMA_USER: adminuser
-      PMA_PASSWORD: Trabzonspor.61
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
     ports:
       - "8082:80"
 volumes:
