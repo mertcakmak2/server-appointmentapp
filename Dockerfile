@@ -1,5 +1,5 @@
 #JDK kurulumunu yapıyoruz
-FROM openjdk:11-jdk-alpine
+FROM openjdk:11
 
 #Projemizin olduğu yeri gösteriyoruz ve kopyalıyoruz
 ARG JAR_FILE=target/*.jar
