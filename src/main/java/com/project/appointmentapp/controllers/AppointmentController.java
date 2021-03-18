@@ -23,6 +23,11 @@ public class AppointmentController {
 
     public final IAppointmentService _service;
 
+    @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
+    public String test() {
+        return "test";
+    }
+
     // /api/appointment
     @RequestMapping(value = {""}, method = RequestMethod.GET)
     public List<Appointment> getAppointments() {
