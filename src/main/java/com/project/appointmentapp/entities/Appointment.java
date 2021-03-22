@@ -26,11 +26,11 @@ public class Appointment {
     @JoinColumn(name = "field_id")
     private Field field;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Date begdt;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Date enddt;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Date crdt;
 
     public Appointment(int appId, Customer customer, Field field, Date begdt, Date enddt, Date crdt) {

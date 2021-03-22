@@ -16,6 +16,7 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/api/field")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class FieldController {
 
     private final IFieldService _fieldService;

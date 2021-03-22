@@ -1,10 +1,8 @@
 package com.project.appointmentapp.controllers;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
 import com.project.appointmentapp.ExceptionHandler.ExcHandler;
 import com.project.appointmentapp.entities.Appointment;
+import com.project.appointmentapp.repositories.WeatherRepository;
 import com.project.appointmentapp.services.appointment.IAppointmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -19,6 +17,7 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/api/appointment")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AppointmentController {
 
     public final IAppointmentService _service;
@@ -54,22 +53,6 @@ public class AppointmentController {
     @RequestMapping(value = {"/{appId}"}, method = RequestMethod.DELETE)
     public ResponseEntity deleteAppointment(@PathVariable int appId) {
         return ResponseEntity.ok(_service.delete(appId));
-    }
-
-    @RequestMapping(value = {"/weather"}, method = RequestMethod.GET)
-    public String getAkaryakit() throws UnirestException {
-        /*HttpResponse<String> response = Unirest.get("https://api.collectapi.com/corona/countriesData?country=Turkey")
-                .header("content-type", "application/json")
-                .header("authorization", "apikey 5irMWXlsVXyS29qN5MKNSJ:1lIPgJgHqWu2vL2I92Ldn6")
-                .asString();
-        return response.getBody();*/
-
-        HttpResponse<String> response = Unirest.get("https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=ankara")
-                .header("content-type", "application/json")
-                .header("authorization", "apikey 5irMWXlsVXyS29qN5MKNSJ:1lIPgJgHqWu2vL2I92Ldn6")
-                .asString();
-
-        return response.getBody();
     }
 
     @ExceptionHandler(value = {EmptyResultDataAccessException.class, NoSuchElementException.class})
