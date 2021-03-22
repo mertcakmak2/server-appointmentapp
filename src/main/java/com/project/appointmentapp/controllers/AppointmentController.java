@@ -2,7 +2,6 @@ package com.project.appointmentapp.controllers;
 
 import com.project.appointmentapp.ExceptionHandler.ExcHandler;
 import com.project.appointmentapp.entities.Appointment;
-import com.project.appointmentapp.repositories.WeatherRepository;
 import com.project.appointmentapp.services.appointment.IAppointmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
