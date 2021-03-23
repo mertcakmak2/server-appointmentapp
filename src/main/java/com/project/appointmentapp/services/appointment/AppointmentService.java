@@ -10,7 +10,6 @@ import com.project.appointmentapp.services.field.IFieldService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
